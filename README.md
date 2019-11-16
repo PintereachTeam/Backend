@@ -83,7 +83,7 @@ This documentation will cover all of the data models and endpoints which can be 
 | POST         | /boards/                    | Creates a new board        |
 | GET          | /board/:user_id             | Gets boards by a user's ID |
 | PUT          | /board/:board_id            | Edits a board's information|
-| DELETE       | /board/:user_id             | Deletes a board            |
+| DELETE       | /board/:board_id            | Deletes a board            |
 
 ### Requests
 
