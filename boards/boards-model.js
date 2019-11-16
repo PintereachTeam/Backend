@@ -1,5 +1,10 @@
 const db = require('../database/db-config');
 
+const getAll = _ => {
+    return db('boards')
+}
+
+
 const getUserBoards = id => {
     return db('boards')
     .where({ user_id: id});
@@ -31,6 +36,7 @@ const remove = id => {
 
 module.exports = {
     getUserBoards,
+    getAll,
     findById,
     update,
     insert,

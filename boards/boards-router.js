@@ -2,6 +2,20 @@ const router = require('express').Router();
 const db = require('./boards-model.js');
 const restricted = require('../auth/restricted-middleware.js');
 
+
+router.get('/', restricted, (req,res) => {
+  const id = req.params.id;
+  db.getAll(id)
+      .then(boards => {
+          res.status(200).json(boards)
+
+      })
+      .catch(err => {
+          res.status(500).json({error:'server error fetching all boards'})
+      });
+});
+
+
 router.get('/:id', restricted, (req,res) => {
     const id = req.params.id;
     db.getUserBoards(id)
