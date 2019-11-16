@@ -125,7 +125,7 @@ This documentation will cover all of the data models and endpoints which can be 
 }
 ```
 
-* A __DELETE__ request to the `/boards/:id` endpoint deletes the board that corresponds to that id, this action can not be undone.
+* A __DELETE__ request to the `/boards/:id` endpoint requires no body. It deletes the board that corresponds to that id, this action can not be undone.
 
 
 ## Articles
@@ -181,5 +181,5 @@ This documentation will cover all of the data models and endpoints which can be 
 }
 ```
 
-* A __DELETE__ request to the `/articles/:id` endpoint deletes the article that corresponds to that id, this action can not be undone.
+* A __DELETE__ request to the `/articles/:id` endpoint requires no body. It deletes the article that corresponds to that id, this action can not be undone.
 
