@@ -9,11 +9,11 @@ exports.up = function(knex) {
         users.string('password', 128).notNullable();
         users.string('first_name', 128)
         users.string('last_name', 128)
-        users.string('email', 130) 
+        users.string('email', 128) 
       })
       .createTable('boards', boards => {
         boards.increments();
-        boards.string('board_title', 200)
+        boards.string('board_title', 255)
           .notNullable()
         boards.integer('user_id')
           .unsigned()
@@ -26,9 +26,9 @@ exports.up = function(knex) {
   
       .createTable('articles', articles => {
         articles.increments(); 
-        articles.string('url', 600)
+        articles.string('url', 512)
           .notNullable() 
-        articles.string('article_label', 200)
+        articles.string('article_label', 255)
         articles.integer('board_id')
           .unsigned()
           .notNullable()
