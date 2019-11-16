@@ -41,7 +41,7 @@ router.post('/login', (req, res) => {
       }
     })
     .catch(error => {
-      res.status(404).json({ message: 'The content you requested could not be found' });
+      res.status(404).json({ message: 'User not found. Please register.' });
     });
 });
 
