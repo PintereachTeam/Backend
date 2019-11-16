@@ -5,8 +5,6 @@ const db = require('../database/db-config');
 const Users = require("../users/users-model");
 
 describe('post article fails with no auth', () => {
-
-
     it('requires authentication', () => {
         const newArticle = {
             article_label: "new article",
@@ -26,6 +24,7 @@ describe('authorization', () => {
     beforeEach(async () => {
         await db("users").truncate();
     });
+
     it('should register with status 201', () => {
         return request(server)
         .post('/auth/register')
@@ -53,44 +52,42 @@ describe('authorization', () => {
     })
 });
 
-    describe('POST auth/login', () => {
-
-        beforeEach(() => {
-            return request(server)
-            .post('/auth/register')
-            .send({
-                username: "username",
-                password: "password"
-            });
+describe('POST auth/login', () => {
+    beforeEach(() => {
+        return request(server)
+        .post('/auth/register')
+        .send({
+            username: "username",
+            password: "password"
         });
+    });
 
-        it('should login successfully', () => {
-            return request(server)
-            .post('/auth/login')
-            .send({
-                username: "username",
-                password: "password"
-            })
-            .then(res => {
-                expect(res.status).toBe(200)
-            });
+    it('should login successfully', () => {
+        return request(server)
+        .post('/auth/login')
+        .send({
+            username: "username",
+            password: "password"
         })
-
-        it('should login with status 400', () => {
-            const newUser = {
-                username: "admin",
-                password: "password"
-            }
-
-            return request(server)
-            .post('/auth/login')
-            .send(newUser)
-            .then(res => {
-                expect(res.status).toBe(400);
-            });
-        })
-
+        .then(res => {
+            expect(res.status).toBe(200)
+        });
     })
+
+    it('should login with status 400', () => {
+        const newUser = {
+            username: "admin",
+            password: "password"
+        }
+
+        return request(server)
+        .post('/auth/login')
+        .send(newUser)
+        .then(res => {
+            expect(res.status).toBe(400);
+        });
+    })
+})
 
 
 

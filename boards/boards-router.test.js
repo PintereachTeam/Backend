@@ -4,7 +4,6 @@ const server = require('../api/server')
 
 
 describe('adds new board', () => {
-
     it('requires auth', () => {
         const newBoard = {
             board_title: "new board",
@@ -18,10 +17,9 @@ describe('adds new board', () => {
         })
     })
 })
- 
 
 describe('delete board', () => {
-    it('should delete board by id', () => {
+    it('deletes board by id', () => {
         Boards.remove(1);
         return Boards.findById(1).then(res => {
             expect(res).toBe(undefined)
