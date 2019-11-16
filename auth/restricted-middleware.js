@@ -14,6 +14,6 @@ module.exports = (req, res, next) => {
       }
     });
   } else {
-    res.status(401).json({ message: 'insufficient credentials, please login again' });
+    res.status(401).json({ message: 'invalid or missing auth token' });
   }
 };

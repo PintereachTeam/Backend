@@ -1,4 +1,4 @@
-const db = require('../database/dbConfig');
+const db = require('../database/db-config');
 
 
 const getAll = async res => {

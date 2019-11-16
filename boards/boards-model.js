@@ -1,4 +1,4 @@
-const db = require('../database/dbConfig');
+const db = require('../database/db-config');
 
 const getUserBoards = id => {
     return db('boards')
