@@ -13,7 +13,7 @@ async function add(user) {
 
   return findById(id);
 }
-
+ 
 function find() {
   return db('users');
 }
