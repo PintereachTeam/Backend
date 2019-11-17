@@ -21,8 +21,8 @@ const findById = id => {
         .first();
 }
 
-const insert = body => {
-    return db('articles')
+const insert = async (body) => {
+    return await db('articles')
         .insert(body)
         .then(([id]) => findById(id));
 };
