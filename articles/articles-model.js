@@ -24,7 +24,8 @@ const findById = id => {
 const insert = async (body) => {
     return await db('articles')
         .insert(body)
-        .then(([id]) => findById(id));
+        .returning("*")
+        // .then(([id]) => findById(id));
 };
   
 const remove = id => {
