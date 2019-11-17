@@ -24,8 +24,8 @@ const update = (id, edits) => {
 
 const insert = body => {
     return db('boards')
-        .insert(body)
-        .then(([id]) => findById(id));
+        .insert(body).returning("*")
+        // .then(([id]) => findById(id));
 };
   
 const remove = id => {
