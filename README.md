@@ -8,7 +8,7 @@ Product Vision: https://docs.google.com/document/d/1az045aRxpwRjG878pPx-YY3G4sVO
 This API is used as part of _Pitnereach_ and allows for CRUD operations to be preformed on the Users, Boards, and Articles.
 
 This documentation will cover all of the data models and endpoints which can be accessed via:
-> <https://pintereach-backend.herokuapp.com/>
+> <https://pintereach-harms.herokuapp.com/>
 
 # Endpoints
 
